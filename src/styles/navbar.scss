@@ -1,4 +1,3 @@
-@import url("https://fonts.google.com/specimen/Public+Sans");
 
 $dark-blue: hsl(233, 26%, 24%);
 $lime-green: hsl(136, 65%, 51%);
@@ -6,11 +5,11 @@ $bright-cyan: hsl(192, 70%, 51%);
 
 .navbg {
   width: 100vw;
-  background: whitesmoke;
+  background: white;
   height: 60px;
   top: 0;
-  position: fixed;
-  font-family: 'Public Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: fixed;  
+  z-index: 100;
 
   .container {
     max-width: 1440px;
@@ -64,10 +63,12 @@ $bright-cyan: hsl(192, 70%, 51%);
       color: $dark-blue;
       font-weight: 500;
       margin-right: 25px;
+      transition: color .3s ease-in-out;
 
       &:hover {
         background: rgb(45,194,84);
         background: linear-gradient(97deg, rgba(45,194,84,1) 23%, rgba(41,161,191,1) 71%);
+        color: white;
       }
     }
   }
@@ -115,7 +116,7 @@ $bright-cyan: hsl(192, 70%, 51%);
       .menu {
         align-items: center;
         flex-flow: column nowrap;
-        margin-top: 25px;
+        margin-top: 35px;
       }
       .nav-btn {
         margin: 15px auto 0 auto;

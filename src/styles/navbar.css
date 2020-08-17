@@ -1,11 +1,10 @@
-@import url("https://fonts.google.com/specimen/Public+Sans");
 .navbg {
   width: 100vw;
-  background: whitesmoke;
+  background: white;
   height: 60px;
   top: 0;
   position: fixed;
-  font-family: 'Public Sans','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 100;
 }
 
 .navbg .container {
@@ -70,11 +69,14 @@
   color: #2d314d;
   font-weight: 500;
   margin-right: 25px;
+  -webkit-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
 }
 
 .navbg .navbar .nav-btn:hover, .navbg .mobile-nav .nav-btn:hover {
   background: #2dc254;
   background: linear-gradient(97deg, #2dc254 23%, #29a1bf 71%);
+  color: white;
 }
 
 .navbg .mobile-nav {
@@ -123,7 +125,7 @@
     -webkit-box-direction: normal;
         -ms-flex-flow: column nowrap;
             flex-flow: column nowrap;
-    margin-top: 25px;
+    margin-top: 35px;
   }
   .navbg .mobile-nav .nav-btn {
     margin: 15px auto 0 auto;
