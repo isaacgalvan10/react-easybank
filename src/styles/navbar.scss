@@ -11,7 +11,7 @@ $bright-cyan: hsl(192, 70%, 51%);
   position: fixed;  
   z-index: 100;
 
-  .container {
+  .nav-container {
     max-width: 1440px;
     margin: 0 auto;
   }
@@ -86,7 +86,7 @@ $bright-cyan: hsl(192, 70%, 51%);
 }
 
 @media all and (max-width: 800px) {
-  .container {
+  .nav-container {
     visibility: hidden;
   }
 

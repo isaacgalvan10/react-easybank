@@ -7,7 +7,7 @@ import '../styles/navbar.css';
 function Navbar(props) {
   return (
     <div className="navbg">
-      <div className="container">
+      <div className="nav-container">
         <nav className="navbar">
           <div className="logo">
             <a href="#"><a href="#"><img src={logo} alt="" /></a></a>

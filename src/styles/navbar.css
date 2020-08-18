@@ -7,7 +7,7 @@
   z-index: 100;
 }
 
-.navbg .container {
+.navbg .nav-container {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -91,7 +91,7 @@
 }
 
 @media all and (max-width: 800px) {
-  .container {
+  .nav-container {
     visibility: hidden;
   }
   .navbg .fa-bars {
