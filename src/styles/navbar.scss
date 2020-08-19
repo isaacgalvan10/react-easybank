@@ -77,7 +77,7 @@ $bright-cyan: hsl(192, 70%, 51%);
     visibility: hidden;
   }
 
-  .fa-bars {
+  .hamburger {
     visibility: hidden;
     position: absolute;
     font-size: 2rem;
@@ -92,7 +92,7 @@ $bright-cyan: hsl(192, 70%, 51%);
 
   .navbg {
 
-    .fa-bars {
+    .hamburger {
       visibility: visible;
       cursor: pointer;
     }

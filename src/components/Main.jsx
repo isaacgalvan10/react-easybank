@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import heroImg from '../assets/bg-intro-desktop.svg';
+import heroImgMobile from '../assets/bg-intro-mobile.svg';
 import heroImg2 from '../assets/image-mockups.png';
 import iconOnline from '../assets/icon-online.svg';
 import iconBudgeting from '../assets/icon-budgeting.svg';
@@ -26,10 +27,11 @@ const Main = () => {
           </div>
           <div className="img-container">
             <div className="hero-img-wrapper">
-              <img className="hero-img" src={heroImg} alt="hero image" />
+              <img className="hero-img" src={heroImg} />
+              <img className="hero-img-mobile" src={heroImgMobile} />
             </div>
             <div className="hero-img-wrapper2">
-              <img className="hero-img2" src={heroImg2} alt="hero image 2" />
+              <img className="hero-img2" src={heroImg2} />
             </div>
           </div>
         </div>

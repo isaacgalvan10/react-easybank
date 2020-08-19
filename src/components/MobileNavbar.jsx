@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../assets/logo.svg';
+import iconHamburger from '../assets/icon-hamburger.svg';
+import iconClose from '../assets/icon-close.svg';
 import '../styles/navbar.css';
 
 class MobileNavbar extends Component {
@@ -30,8 +32,8 @@ class MobileNavbar extends Component {
           </ul>
           <a href="#"><div className="nav-btn">Request Invite</div></a>
         </div>
-        <i className="fa fa-bars" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'hidden' : '' }}></i>
-        <i className="fa fa-times" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'visible' : '' }}></i>
+        <img src={iconHamburger} className="hamburger" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'hidden' : '' }} />
+        <img src={iconClose} className="fa-times" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'visible' : '' }} />
       </div >
     );
   }
