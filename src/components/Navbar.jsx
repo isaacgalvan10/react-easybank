@@ -10,7 +10,7 @@ function Navbar(props) {
       <div className="nav-container">
         <nav className="navbar">
           <div className="logo">
-            <a href="#"><a href="#"><img src={logo} alt="" /></a></a>
+            <a href="#"><img src={logo} alt="" /></a>
           </div>
           <ul className="menu">
             <li className="link"><a href="#">Home</a></li>

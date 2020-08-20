@@ -1,42 +1,47 @@
-import React, { Component } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
 import logo from '../assets/logo.svg';
 import iconHamburger from '../assets/icon-hamburger.svg';
 import iconClose from '../assets/icon-close.svg';
 import '../styles/navbar.css';
 
-class MobileNavbar extends Component {
-  state = {
-    isOpen: false
-  }
+const MobileNavbar = () => {
+  const [menuState, setMenuState] = useState(false);
+  let sidebarMenu = useRef(null);
+  let mobileMenuTl = useRef();
 
-  handleClick = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
+  useEffect(() => {
+    mobileMenuTl.current = gsap.timeline({ paused: true });
+    mobileMenuTl.current.fromTo([sidebarMenu], {
+      x: '100%'
+    }, {
+      x: 0
     })
-    console.log(this.state);
-  }
+  }, []);
 
-  render() {
-    return (
-      <div className="mobile-nav">
-        <div className="logo">
-          <a href="#"><img src={logo} alt="" /></a>
-        </div>
-        <div className='collapse' style={{ visibility: this.state.isOpen ? 'visible' : '' }}>
-          <ul className="menu">
-            <li className="link"><a href="#">Home</a></li>
-            <li className="link"><a href="#">About</a></li>
-            <li className="link"><a href="#">Contact</a></li>
-            <li className="link"><a href="#">Blog</a></li>
-            <li className="link"><a href="#">Careers</a></li>
-          </ul>
-          <a href="#"><div className="nav-btn">Request Invite</div></a>
-        </div>
-        <img src={iconHamburger} className="hamburger" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'hidden' : '' }} />
-        <img src={iconClose} className="fa-times" onClick={this.handleClick} style={{ visibility: this.state.isOpen ? 'visible' : '' }} />
-      </div >
-    );
-  }
+  useEffect(() => {
+    menuState ? mobileMenuTl.current.play() : mobileMenuTl.current.reverse();
+  }, [menuState]);
+
+  return (
+    <div className="mobile-nav">
+      <div className="logo">
+        <a href="#"><img src={logo} alt="" /></a>
+      </div>
+      <div className={`collapse ${!menuState ? '' : ''}`} ref={el => sidebarMenu = el} >
+        <ul className="menu">
+          <li className="link"><a href="#">Home</a></li>
+          <li className="link"><a href="#">About</a></li>
+          <li className="link"><a href="#">Contact</a></li>
+          <li className="link"><a href="#">Blog</a></li>
+          <li className="link"><a href="#">Careers</a></li>
+        </ul>
+        <a href="#"><div className="nav-btn">Request Invite</div></a>
+      </div>
+      <img src={iconHamburger} className='hamburger' style={{ visibility: menuState ? 'hidden' : '' }} onClick={() => setMenuState(!menuState)} />
+      <img src={iconClose} className={`fa-times ${!menuState ? 'hidden' : ''}`} onClick={() => setMenuState(!menuState)} />
+    </div >
+  );
 }
 
 export default MobileNavbar;
